@@ -1,0 +1,41 @@
+
+- type: entity
+  parent: WeaponTurretXeno
+  id: xeno turret
+  suffix: Strong
+  components:
+    - type: Sprite
+      scale: 1.5, 1.5
+    - type: Gun
+      fireRate: 3
+      minAngle: 3
+      maxAngle: 10
+      angleIncrease: 1
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 250
+
+- type: entity
+  parent: XenoWardingTower
+  id: XenoSpawnPointWeak
+  name: Xeno Tendril Point
+  description: Xenos seem to be really attracted to this.
+  components:
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - MobXeno
+    chance: 0.85
+    intervalSeconds: 30
+    minimumEntitiesSpawned: 2
+    maximumEntitiesSpawned: 4
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

@@ -75,6 +75,7 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+  - type: MobState
 
 - type: entity
   parent: BaseWeaponBallisticTurret

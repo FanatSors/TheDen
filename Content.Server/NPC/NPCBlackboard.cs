@@ -44,10 +44,10 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         {"MinimumIdleTime", 2f},
         {"MovementRangeClose", 0.2f},
         {"MovementRange", 1.5f},
-        {"RangedRange", 10f},
+        {"RangedRange", 15f},
         {"RotateSpeed", float.MaxValue},
-        {"VisionRadius", 10f},
-        {"AggroVisionRadius", 10f},
+        {"VisionRadius", 20f},
+        {"AggroVisionRadius", 20f},
     };
 
     /// <summary>

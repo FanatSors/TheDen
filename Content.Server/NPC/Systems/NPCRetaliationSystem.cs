@@ -53,7 +53,7 @@ public sealed class NPCRetaliationSystem : EntitySystem
     {
         // don't retaliate against inanimate objects.
         if (!HasComp<MobStateComponent>(target))
-            return false;
+          return false;
 
         if (!ent.Comp.RetaliateFriendlies
             && _npcFaction.IsEntityFriendly(ent.Owner, target))
