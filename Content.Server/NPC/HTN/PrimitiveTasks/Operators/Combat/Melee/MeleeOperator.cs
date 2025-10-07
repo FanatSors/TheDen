@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.NPC.Components;
 using Content.Shared.CombatMode;
+using Content.Shared.Mech.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 
@@ -55,6 +56,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     public override async Task<(bool Valid, Dictionary<string, object>? Effects)> Plan(NPCBlackboard blackboard,
         CancellationToken cancelToken)
     {
+        //return (false, null);
         // Don't attack if they're already as wounded as we want them.
         if (!blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager))
         {
@@ -65,7 +67,12 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             mobState.CurrentState > TargetState)
         {
             return (false, null);
+
         }
+      /*  if (_entManager.TryGetComponent<MechComponent>(target, out var mechState) &&
+                    mechState.PilotSlot.Count == 0 )  {
+        return (false, null);
+        }*/
 
         return (true, null);
     }
@@ -88,7 +95,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     public override void PlanShutdown(NPCBlackboard blackboard)
     {
         base.PlanShutdown(blackboard);
-        
+
         ConditionalShutdown(blackboard);
     }
 
@@ -96,7 +103,7 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
     {
         base.Update(blackboard, frameTime);
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
-        HTNOperatorStatus status;
+        HTNOperatorStatus status; //= HTNOperatorStatus.Continuing;
 
         if (_entManager.TryGetComponent<NPCMeleeCombatComponent>(owner, out var combat) &&
             blackboard.TryGetValue<EntityUid>(TargetKey, out var target, _entManager))
@@ -104,9 +111,13 @@ public sealed partial class MeleeOperator : HTNOperator, IHtnConditionalShutdown
             combat.Target = target;
 
             // Success
-            if (_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&
-                mobState.CurrentState > TargetState)
+            if (((_entManager.TryGetComponent<MobStateComponent>(target, out var mobState) &&
+                mobState.CurrentState > TargetState))) /*||
+                  (_entManager.TryGetComponent<MechComponent>(target, out var mechState) &&
+                    mechState.PilotSlot.Count == 0))*/
+
             {
+
                 status = HTNOperatorStatus.Finished;
             }
             else
