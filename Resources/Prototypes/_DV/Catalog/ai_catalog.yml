@@ -51,6 +51,32 @@
     stock: 1
 
 - type: listing
+  id: AiTurretDeployBig
+  name: ai-big-bluespace-turret-name
+  description: ai-big-bluespace-turret-desc
+  productAction: ActionStationAiDeployTurretBig
+  cost:
+    SiliconMemory: 5
+  categories:
+  - AiAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: AiTurretDeploy
+  name: ai-bluespace-turret-name
+  description: ai-bluespace-turret-desc
+  productAction: ActionStationAiDeployTurret
+  cost:
+    SiliconMemory: 5
+  categories:
+  - AiAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
   id: AiEmergencySealant
   name: ai-emergency-sealant-name
   description: ai-emergency-sealant-desc
