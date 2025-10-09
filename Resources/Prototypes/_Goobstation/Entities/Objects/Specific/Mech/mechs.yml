@@ -357,6 +357,10 @@
     doAfterDelay: 15
   - type: StaticPrice
     price: 15000 # Some respect if you steal one of these.
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: MobState
 
 - type: entity
   id: MechMarauderBattery
@@ -506,6 +510,10 @@
     doAfterDelay: 20
   - type: StaticPrice
     price: 15000 # Some respect if you steal one of these.
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: MobState
 
 - type: entity
   id: MechGygaxSyndieBattery

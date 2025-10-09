@@ -92,6 +92,40 @@
       entity: StationAiHolopointer
 
 - type: entity
+  id: ActionStationAiDeployTurretBig
+  name: ai-big-bluespace-turret-name
+  description: ai-big-bluespace-turret-desc
+  components:
+  - type: WorldTargetAction
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: holopointer
+    range: -1
+    checkCanAccess: false
+    checkCanInteract: false
+    useDelay: 240
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: AITemporaryTurretBig
+
+- type: entity
+  id: ActionStationAiDeployTurret
+  name: ai-bluespace-turret-name
+  description: ai-bluespace-turret-desc
+  components:
+  - type: WorldTargetAction
+    itemIconStyle: BigAction
+    icon:
+      sprite: _DV/Interface/Actions/actions_ai.rsi
+      state: holopointer
+    range: -1
+    checkCanAccess: false
+    checkCanInteract: false
+    useDelay: 120
+    event: !type:StationAiSpawnEntityActionEvent
+      entity: AITemporaryTurret
+
+- type: entity
   id: StationAiHolopointer
   name: holopointer
   description: A hologram projected by the station's AI to bring your attention to something.

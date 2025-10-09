@@ -16,6 +16,12 @@ ai-repair-nanites-desc = Send some nanites to give a cyborg some minor repairs
 ai-emergency-sealant-name = Emergency Sealant
 ai-emergency-sealant-desc = Deploy some metal foam to seal breaches
 
+ai-bluespace-turret-name = Bluespace Turret
+ai-bluespace-turret-desc = Deploy a temporary turret to protect crew.
+
+ai-big-bluespace-turret-name = Big Laser Bluespace Turret
+ai-big-bluespace-turret-desc = Deploy a big temporary turret to protect crew.
+
 ai-drone-synthesizer-name = Drone Synthesizer
 ai-drone-synthesizer-desc = Create a maintenance drone out of nanites
 
