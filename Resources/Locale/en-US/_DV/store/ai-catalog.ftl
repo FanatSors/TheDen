@@ -19,8 +19,8 @@ ai-emergency-sealant-desc = Deploy some metal foam to seal breaches
 ai-bluespace-turret-name = Bluespace Turret
 ai-bluespace-turret-desc = Deploy a temporary turret to protect crew.
 
-ai-big-bluespace-turret-name = Big Laser Bluespace Turret
-ai-big-bluespace-turret-desc = Deploy a big temporary turret to protect crew.
+ai-big-bluespace-turret-name = Deploy Hostile Turret
+ai-big-bluespace-turret-desc = Deploy a temporary turret to harm crew. WARNING: Under normal conditions, this will cause self-disconnect.
 
 ai-drone-synthesizer-name = Drone Synthesizer
 ai-drone-synthesizer-desc = Create a maintenance drone out of nanites
