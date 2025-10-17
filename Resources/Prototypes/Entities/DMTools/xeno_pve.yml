@@ -9,17 +9,17 @@
       lifetime: 30
 
 - type: entity
-  parent: WeaponTurretNanoTrasen
+  parent: WeaponTurretHostile
   id: AITemporaryTurretBig
-  name: Big Bluespace Turret
+  name: Angry Bluespace Turret
   description: Is here because AI wants to help you.  A LOT.
   components:
     - type: TimedDespawn
       lifetime: 60
     - type: Sprite
-      scale: 1.5, 1.5
+      scale: 1.2, 1.2
     - type: Gun
-      fireRate: 6
+      fireRate: 3
       minAngle: 1
       maxAngle: 7
       angleIncrease: 1

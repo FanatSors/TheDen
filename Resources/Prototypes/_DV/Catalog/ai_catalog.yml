@@ -56,12 +56,12 @@
   description: ai-big-bluespace-turret-desc
   productAction: ActionStationAiDeployTurretBig
   cost:
-    SiliconMemory: 5
+    SiliconMemory: 1
   categories:
   - AiAbilities
   conditions:
   - !type:ListingLimitedStockCondition
-    stock: 1
+    stock: 2
 
 - type: listing
   id: AiTurretDeploy
