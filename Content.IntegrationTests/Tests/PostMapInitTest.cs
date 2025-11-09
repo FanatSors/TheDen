@@ -42,6 +42,7 @@
 // SPDX-FileCopyrightText: 2025 marc-pelletier
 // SPDX-FileCopyrightText: 2025 sheepie
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2025 therealDLondon
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -135,7 +136,8 @@ namespace Content.IntegrationTests.Tests
             "Bagel",
             "Northway",
             "Barrier",
-            "Manta"
+            "Manta",
+            "Dingo"
         };
 
         /// <summary>
