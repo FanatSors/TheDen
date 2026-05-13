@@ -3,6 +3,10 @@
 # SPDX-FileCopyrightText: 2025 Winter
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Eightballll
+# SPDX-FileCopyrightText: 2026 Jakumba
+# SPDX-FileCopyrightText: 2026 crumchy
+# SPDX-FileCopyrightText: 2026 sheepie
 #
 # SPDX-License-Identifier: MPL-2.0
 
@@ -212,6 +216,16 @@
     - ClothMade
     - MantisBeltStorable
 
+- type: entity # This is a reference to hit free online browser game corru.observer
+  parent: PlushieMoth
+  id: PlushieMothObservant
+  name: observant moth plushie
+  description: A plushie that is probably a safety violation already but that's okay, we can cross it off the report lol.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/toys.rsi
+    state: plushiemothobservant
+
 - type: entity
   parent: BaseItem
   id: BluespacePlushiePatch
@@ -272,3 +286,158 @@
       entries:
         CottonBurger: WhistlerPlushie
 
+# @ undertalesex; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePatty
+  name: pitiless plushie
+  description: It doesn't look very healthy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/pattyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ twiggythedragon; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieTwiggy
+  name: twiggy plushie
+  description: Blep!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/twiggyplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ lonely1400; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieStu
+  name: stu plushie
+  description: A blood-shaded plushie of a certain security officer.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/stuplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PattyPlushie
+
+# @ leonardo_dabepis; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushiePhil
+  name: normal cat plushie
+  description: Why does it look like that...?!
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/philplushie.rsi
+    state: icon
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: PhilPlushie
+
+# @ hibirdstansunny; approved by june (owner)
+- type: entity
+  parent: BasePlushie
+  id: PlushieAgena
+  name: pink slime plushie
+  description: A fairly squishy plushie of a pink slime person. It has a noticeable bubblegum fragrance.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/agenaplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: inhand-left
+      right:
+        - state: inhand-right
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: AgenaPlushie
+
+# @ eightballll;; approved by june (owner)
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieInkdrop
+  name: mischevious plushie
+  description: What did he do this time...
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/inkdropplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+        - state: inhand-left
+      right:
+        - state: inhand-right
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: InkdropPlushie
+
+ # @Jakumba; approved by Jakumba (maint)
+- type: entity
+  parent: PlushieExperiment
+  id: PlushieJak
+  name: wet cat plushie
+  description: Milk sold separately.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/jakplushie.rsi
+    state: icon
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+  - type: Tag
+    tags:
+    - ClothMade
+    - Payload
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: _DEN/Objects/Fun/jakplushie.rsi
+    equippedPrefix: equipped-HELMET.png
+    slots:
+    - HEAD
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: JakPlushie

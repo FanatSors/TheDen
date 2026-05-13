@@ -3,12 +3,13 @@
 # SPDX-FileCopyrightText: 2025 Selva
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius77
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: characterItemGroup
   id: TraitsRaceSounds
-  maxItems: 1
+  maxItems: 3
   items:
     - type: trait
       id: VulpkaninSounds
@@ -41,6 +42,17 @@
     - type: trait
       id: VoxSounds
     - type: trait
+      id: SlimeSounds
+    - type: trait
+      id: DionaSounds
+    - type: trait
+      id: HumanSounds
+
+- type: characterItemGroup
+  id: TraitsReplaceRaceSounds
+  maxItems: 1
+  items:
+    - type: trait
       id: VulpkaninSoundsReplace
     - type: trait
       id: FelinidSoundsReplace
@@ -70,4 +82,10 @@
       id: ArachneSoundsReplace
     - type: trait
       id: VoxSoundsReplace
+    - type: trait
+      id: SlimeSoundsReplace
+    - type: trait
+      id: DionaSoundsReplace
+    - type: trait
+      id: HumanSoundsReplace
 

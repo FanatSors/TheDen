@@ -1,4 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Blitz
 # SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2026 Aikakakah
+# SPDX-FileCopyrightText: 2026 ivorytemple
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -9,67 +12,123 @@
 # Arms
 - type: marking
   id: GradientLArm
-  bodyPart: LArm
-  markingCategory: LeftArm
+  parent: BaseLArmMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_arm
 
 - type: marking
   id: GradientRArm
-  bodyPart: RArm
-  markingCategory: RightArm
+  parent: BaseRArmMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_arm
 
 - type: marking
   id: GradientLHand
-  bodyPart: LHand
-  markingCategory: LeftHand
+  parent: BaseLHandMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_hand
 
 - type: marking
   id: GradientRHand
-  bodyPart: RHand
-  markingCategory: RightHand
+  parent: BaseRHandMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_hand
 
+- type: marking
+  id: GradientLArmUnshaded
+  parent: BaseLArmMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_arm
+  shader: unshaded
+
+- type: marking
+  id: GradientRArmUnshaded
+  parent: BaseRArmMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_arm
+  shader: unshaded
+
+- type: marking
+  id: GradientLHandUnshaded
+  parent: BaseLHandMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_hand
+  shader: unshaded
+
+- type: marking
+  id: GradientRHandUnshaded
+  parent: BaseRHandMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_hand
+  shader: unshaded
+
 # Legs
 - type: marking
   id: GradientLLeg
-  bodyPart: LLeg
-  markingCategory: LeftLeg
+  parent: BaseLLegMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_leg
 
 - type: marking
   id: GradientRLeg
-  bodyPart: RLeg
-  markingCategory: RightLeg
+  parent: BaseRLegMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_leg
 
 - type: marking
   id: GradientLFoot
-  bodyPart: LFoot
-  markingCategory: LeftFoot
+  parent: BaseLFootMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_l_foot
 
 - type: marking
   id: GradientRFoot
-  bodyPart: RFoot
-  markingCategory: RightFoot
+  parent: BaseRFootMarking
   sprites:
   - sprite: Mobs/Customization/misc.rsi
     state: m_gradient_r_foot
+
+- type: marking
+  id: GradientLLegUnshaded
+  parent: BaseLLegMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_leg
+  shader: unshaded
+
+- type: marking
+  id: GradientRLegUnshaded
+  parent: BaseRLegMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_leg
+  shader: unshaded
+
+- type: marking
+  id: GradientLFootUnshaded
+  parent: BaseLFootMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_l_foot
+  shader: unshaded
+
+- type: marking
+  id: GradientRFootUnshaded
+  parent: BaseRFootMarking
+  sprites:
+  - sprite: Mobs/Customization/misc.rsi
+    state: m_gradient_r_foot
+  shader: unshaded
 
 # Tail

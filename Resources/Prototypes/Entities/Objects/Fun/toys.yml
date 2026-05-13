@@ -601,6 +601,57 @@
       CottonBurger: SpaceLizardPlushie
 
 - type: entity
+  parent: PlushieLizard
+  id: PlushieLizardInversed #Hew!
+  name: drazil plushie
+  description: An adorable stuffed toy that resembles a lizardperson from an inversed dimension. Hew!
+  components:
+  - type: Sprite
+    state: plushie_lizard_inversed
+  - type: Item
+    heldPrefix: plushielizardinversed
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouHew
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouHew
+          Quantity: 10
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: lizard-inversed
+    slots:
+    - HEAD
+
+- type: entity
   parent: BasePlushie
   id: PlushieDiona
   name: diona plushie
@@ -1920,6 +1971,47 @@
 
 - type: entity
   parent: BaseItem
+  id: TennisBall
+  name: tennis ball
+  description: A fuzzy orb of endless betrayal.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Balls/tennisball.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.25
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.5 # a little bouncy
+        friction: 0.2
+  - type: Catchable
+    catchChance: 0.8
+    catchSuccessSound:
+      path: /Audio/Effects/Footsteps/bounce.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Effects/Footsteps/bounce.ogg
+  - type: Item
+    size: Small
+    sprite: Objects/Fun/Balls/tennisball.rsi
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+      params:
+        volume: -4
+  - type: UseDelay
+  - type: Clothing
+    slots: [mask]
+  - type: Tag
+    tags:
+    - PetWearable
+
+- type: entity
+  parent: BaseItem
   id: BeachBall
   name: beach ball
   description: The simple beach ball is one of Nanotrasen's most popular products. 'Why do we make beach balls? Because we can! (TM)' - Nanotrasen
@@ -2564,23 +2656,6 @@
   - type: FoodSequenceElement
     entries:
       CottonBurger: VegaPlushie
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieAlice
-  name: alice plushie
-  description: This plushie was produced as part of central commands "cuddle command" propaganda plushie line. This one speaks in an unintelligible dialect whenever someone squeezes it.
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/toys.rsi
-    state: aliceplush
-  - type: StaminaDamageOnHit
-    damage: 0.8
-  - type: UseDelay
-    delay: 1.5
-  - type: FoodSequenceElement
-    entries:
-      CottonBurger: AlicePlushie
 
 - type: entity
   parent: BasePlushie

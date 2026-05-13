@@ -100,6 +100,8 @@
       id: GoblinAccent
     - type: trait
       id: ItalianAccent
+    - type: trait
+      id: ScrambledAccent
     # DEN start: fixing tests
     - type: trait
       id: FrenchAccentBasic
@@ -112,15 +114,16 @@
 #      id: ProperCapitalizationAccent
 # These don't complexify your speech and shouldn't count toward the two-only limit
 
-- type: characterItemGroup
-  id: TraitsLanguagesTajaran
-  maxItems: 1
-  items:
-    - type: trait
-      id: NalRasan
-    - type: trait
-      id: SiikTajr
-    - type: trait
-      id: YaSsa
-    - type: trait
-      id: Delvahii
+# Den Edit: Remove Species requirement
+# - type: characterItemGroup
+#   id: TraitsLanguagesTajaran
+#   maxItems: 1
+#   items:
+#     - type: trait
+#       id: NalRasan
+#     - type: trait
+#       id: SiikTajr
+#     - type: trait
+#       id: YaSsa
+#     - type: trait
+#       id: Delvahii

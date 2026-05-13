@@ -78,6 +78,12 @@
 
 - type: marking
   abstract: true
+  id: BaseFace
+  markingCategory: Face
+  bodyPart: Face
+
+- type: marking
+  abstract: true
   id: BaseSnout
   markingCategory: Snout
   bodyPart: Snout

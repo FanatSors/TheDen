@@ -102,7 +102,6 @@
         - PlushieJester
         - PlushieVega
         - PlushieMort
-        - PlushieAlice
         # Begin DeltaV - see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
         - PlushieFelinid
         - PlushieOni
@@ -119,8 +118,16 @@
         - SqueakySmileyBall
         - PlushieAlienGerm
         - PlushieAlienGermMini
-        - PlushieAzalea
+        - PlushieAzalea # Den
         - PlushieWhistler # Den
+        - PlushieAgena # Den
+        - PlushiePatty # Den
+        - PlushieTwiggy # Den
+        - PlushieStu  # Den
+        - PlushiePhil  # Den
+        - PlushieInkdrop # Den
+        - PlushieMothObservant # Den
+        - PlushieJak # Den
       chance: 0.5
       offset: 0.2
 

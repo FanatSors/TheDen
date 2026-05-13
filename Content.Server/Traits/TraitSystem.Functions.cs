@@ -8,6 +8,7 @@
 // SPDX-FileCopyrightText: 2025 VMSolidus
 // SPDX-FileCopyrightText: 2025 portfiend
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -48,6 +49,7 @@ using Content.Shared.Speech;
 using Robust.Shared.Utility;
 using Robust.Shared.GameStates;
 using Content.Shared.Language;
+
 
 namespace Content.Server.Traits;
 
@@ -919,16 +921,16 @@ public sealed partial class TraitAddAllowedEmote : TraitFunction
 // Set the singular additional sound a player can also have.
 // </summary>
 [UsedImplicitly]
-public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
+public sealed partial class TraitAddAdditionalEmoteSound : TraitFunction
 {
-    [DataField("emoteSound"), AlwaysPushInheritance]
-    public string ExtraEmoteSoundPrototype { get; private set; } = "Vulpkanin";
+    [DataField, AlwaysPushInheritance]
+    public string EmoteSound { get; private set; } = "Vulpkanin";
 
     [DataField, AlwaysPushInheritance]
     public bool UseSex { get; private set; }
 
-    [DataField("replace"), AlwaysPushInheritance]
-    public bool ReplaceExistingEmotes { get; private set; }
+    [DataField("baseMob"), AlwaysPushInheritance]
+    public EntProtoId? BaseMobProto;
 
     public override void OnPlayerSpawn(EntityUid uid,
         IComponentFactory factory,
@@ -938,6 +940,7 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
         var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
         var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
         var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
         var emotePrefix = string.Empty;
 
@@ -949,12 +952,76 @@ public sealed partial class TraitSetAdditionalEmoteSound : TraitFunction
                 emotePrefix = "Male";
         }
 
-        var protoId = emotePrefix + ExtraEmoteSoundPrototype;
+        var protoId = emotePrefix + EmoteSound;
 
-        if (string.IsNullOrEmpty(protoId) || !prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
+        if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
             return;
 
-        additionalVocalSounds.ReplaceExistingEmotes = ReplaceExistingEmotes;
-        additionalVocalSounds.AdditionalSounds = protoId;
+        additionalVocalSounds.AdditionalSounds.Add(protoId);
+
+        // DEN: Copy AllowedEmotes so that they can actually use all their emotes.
+        if (BaseMobProto is { } baseMobProtoId && prototypeManager.TryIndex(baseMobProtoId, out var baseMobProto))
+        {
+            if (baseMobProto.Components.TryGetComponent<SpeechComponent>(componentFactory, out var extraSpeechComp) &&
+                entityManager.TryGetComponent<SpeechComponent>(uid, out var speechComp))
+            {
+                speechComp.AllowedEmotes.AddRange(extraSpeechComp.AllowedEmotes);
+                speechComp.AllowedEmotes = speechComp.AllowedEmotes.Distinct().ToList();
+            }
+        }
+    }
+}
+
+// <summary>
+// Set the singular additional sound a player can also have.
+// </summary>
+[UsedImplicitly]
+public sealed partial class TraitSetReplacingEmoteSound : TraitFunction
+{
+    [DataField, AlwaysPushInheritance]
+    public string EmoteSound { get; private set; } = "Vulpkanin";
+
+    [DataField, AlwaysPushInheritance]
+    public bool UseSex { get; private set; }
+
+    [DataField("baseMob"), AlwaysPushInheritance]
+    public EntProtoId? BaseMobProto;
+
+    public override void OnPlayerSpawn(EntityUid uid,
+        IComponentFactory factory,
+        IEntityManager entityManager,
+        ISerializationManager serializationManager)
+    {
+        var additionalVocalSounds = entityManager.EnsureComponent<AdditionalVocalSoundsComponent>(uid);
+        var appearanceComponent = entityManager.GetComponentOrNull<HumanoidAppearanceComponent>(uid);
+        var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
+        var componentFactory = IoCManager.Resolve<IComponentFactory>();
+        var voice = appearanceComponent?.PreferredVoice ?? Sex.Unsexed;
+        var emotePrefix = string.Empty;
+
+        if (UseSex)
+        {
+            if (voice == Sex.Female)
+                emotePrefix = "Female";
+            else
+                emotePrefix = "Male";
+        }
+
+        var protoId = emotePrefix + EmoteSound;
+
+        if (!prototypeManager.TryIndex<EmoteSoundsPrototype>(protoId, out _))
+            return;
+
+        additionalVocalSounds.ReplacesDefaultSounds = protoId;
+
+        // DEN: Replace AllowedEmotes so that they can actually use all their emotes.
+        if (BaseMobProto is not null && prototypeManager.TryIndex(BaseMobProto.Value, out var baseMobProto))
+        {
+            if (baseMobProto.Components.TryGetComponent<SpeechComponent>(componentFactory, out var extraSpeechComp) &&
+                entityManager.TryGetComponent<SpeechComponent>(uid, out var speechComp))
+            {
+                speechComp.AllowedEmotes = extraSpeechComp.AllowedEmotes;
+            }
+        }
     }
 }

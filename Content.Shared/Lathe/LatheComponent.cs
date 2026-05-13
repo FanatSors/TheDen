@@ -10,6 +10,7 @@
 // SPDX-FileCopyrightText: 2025 Whatstone
 // SPDX-FileCopyrightText: 2025 deltanedas
 // SPDX-FileCopyrightText: 2025 sleepyyapril
+// SPDX-FileCopyrightText: 2026 Dirius77
 //
 // SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
@@ -92,7 +93,47 @@ namespace Content.Shared.Lathe
         [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float MaterialUseMultiplier = 1;
 
-        public const float DefaultPartRatingMaterialUseMultiplier = 0.85f;
+        /// <summary>
+        /// The cumulative time multiplier from parts and upgrade kits.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        public float FinalTimeMultiplier = 1;
+
+        /// <summary>
+        /// The cumulative material use multiplier from parts and upgrade kits.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+        public float FinalMaterialUseMultiplier = 1;
+
+        /// <summary>
+        /// Which machine part impacts print speed.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartPrintSpeed = "Manipulator";
+
+        /// <summary>
+        /// The value that is used to calculate the modified <see cref="TimeMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingPrintTimeMultiplier = 0.5f;
+
+        /// <summary>
+        /// Which machine part impacts material use.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartMaterialUse = "MatterBin";
+
+        /// <summary>
+        /// The value that is used to calculate the modifier <see cref="MaterialUseMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingMaterialUseMultiplier = 0.85f;
+
+        /// <summary>
+        /// Causes produced items to not have their material quantities reduced by the input cost discount.
+        /// </summary>
+        [DataField] public bool IgnoreMaterialPenalty = false; // DEN: Ore processor upgrades produce more mats.
+
         #endregion
     }
 

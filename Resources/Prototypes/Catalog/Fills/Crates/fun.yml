@@ -50,7 +50,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
 - type: entityTable
   id: AllPlushiesTable
@@ -72,6 +72,8 @@
         weight: 9
       - id: PlushieSpaceLizard
         weight: 1
+      - id: PlushieLizardInversed
+        weight: 0.5
     - !type:GroupSelector
       children:
       - id: PlushieCarp
@@ -110,11 +112,21 @@
       - !type:EntSelector
         id: PlushieVega
       - !type:EntSelector
-        id: PlushieAlice
-      - !type:EntSelector
         id: PlushieJenn
       - !type:EntSelector
         id: PlushieAzalea
+      - !type:EntSelector
+        id: PlushiePatty
+      - !type:EntSelector
+        id: PlushieTwiggy
+      - !type:EntSelector
+        id: PlushieStu
+      - !type:EntSelector
+        id: PlushiePhil
+      - !type:EntSelector
+        id: PlushieInkdrop
+      - !type:EntSelector
+        id: PlushieAgena
       - !type:EntSelector
         id: PlushieSharkBlue
       - !type:EntSelector
@@ -131,6 +143,8 @@
         id: PlushieHampter
       - !type:EntSelector
         id: PlushieMoth
+      - !type:EntSelector # Den
+        id: PlushieMothObservant
       - !type:EntSelector
         id: PlushieArachind
       - !type:EntSelector
@@ -158,6 +172,8 @@
         weight: 0.3
       - !type:EntSelector # TheDen
         id: PlushieWhistler
+      - !type:EntSelector
+        id: PlushieJak # TheDen
     - !type:GroupSelector
       children:
       - !type:EntSelector
@@ -485,6 +501,8 @@
       - id: ClothingShoesClownLarge
       - id: ClothingHeadHatMagician
       - id: BeachBall
+      - id: TennisBall
+        amount: 2
       - id: ClothingShoesSkates
 
 - type: entity

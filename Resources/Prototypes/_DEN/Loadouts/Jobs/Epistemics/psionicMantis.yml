@@ -461,6 +461,20 @@
     - ClothingHeadHoodMantisDark
 
 - type: loadout
+  id: LoadoutPsionicMantisHeadHoodMantisDarkFolded
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisHead
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingHeadHoodMantisDarkFolded
+
+- type: loadout
   id: LoadoutPsionicMantisHeadMantisFezOrnate
   category: JobsEpistemicsPsionicMantis
   cost: 0
@@ -505,6 +519,20 @@
         - ForensicMantis
   items:
     - ClothingNeckMantleMantisOrnate
+
+- type: loadout
+  id: LoadoutPsionicMantisNeckCloakMantisShroud
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisNeck
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - ClothingNeckCloakMantisShroud
 
 # Mask
 
@@ -822,3 +850,18 @@
         - ForensicMantis
   items:
     - MantisMeleeGreatswordSheathFilled # Faust
+
+- type: loadout
+  id: LoadoutPsionicMantisMeleeGreatswordHip
+  category: JobsEpistemicsPsionicMantis
+  cost: 0
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisRanged # Choosing the risk/reward greatsword prevents you from taking a gun, you have to commit
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutPsionicMantisMelee
+    - !type:CharacterJobRequirement
+      jobs:
+        - ForensicMantis
+  items:
+    - MantisMeleeGreatswordSheathHipFilled # Faust (Hip Carry)

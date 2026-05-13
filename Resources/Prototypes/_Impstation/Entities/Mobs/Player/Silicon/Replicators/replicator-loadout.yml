@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 beck
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Jakumba
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -37,7 +38,7 @@
 - type: entity
   id: ReplicatorT1Weapon
   parent: [ BaseWeaponBatterySmall, BaseItem ]
-  name: replicator stun projector
+  name: replicator beam projector
   description: You will protect the nest.
   suffix: Unremoveable
   categories: [HideSpawnMenu]
@@ -52,7 +53,11 @@
     state: t1weapon
   - type: Appearance
   - type: Gun
-    fireRate: 0.3
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    clumsyProof: true # Den
+    fireRate: 0.7 # Den
     soundGunshot:
       path: /Audio/_Impstation/Weapons/Guns/Gunshots/stunprojector.ogg
   - type: HitscanBatteryAmmoProvider
@@ -79,7 +84,7 @@
 
 - type: entity
   id: ReplicatorT2AltWeapon
-  name: defender stun projector
+  name: defender beam projector
   parent: ReplicatorT1Weapon
   categories: [HideSpawnMenu]
   components:
@@ -113,9 +118,12 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 7
-        Shock: 7
-        Structural: 15
+        Blunt: 5 # Den
+        Slash: 10 # Den
+        Shock: 5 # Den
+        Structural: 20 # Den
+  - type: StaminaDamageOnHit
+    damage: 30
 
 - type: entity
   id: ReplicatorT3Weapon
@@ -138,8 +146,8 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 22
-        Shock: 8 # split up damage groups to make them a little more effective against armored/blunt resistant targets
+        Blunt: 30
+        Shock: 10 # split up damage groups to make them a little more effective against armored/blunt resistant targets
         Structural: 45
   - type: Unremoveable
   - type: Prying
@@ -200,7 +208,9 @@
 
 - type: hitscan
   id: HitscanReplicator
-  staminaDamage: 18
+  damage:
+    types:
+      Heat: 15 #Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli
@@ -213,7 +223,9 @@
 
 - type: hitscan
   id: HitscanReplicator2
-  staminaDamage: 32
+  damage:
+    types:
+      Heat: 20 #Den
   muzzleFlash:
     sprite: _Impstation/Mobs/Replicator/replicator_gun.rsi
     state: muzzle_repli2

@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 # Psionic Mantis
 - type: characterItemGroup
@@ -132,6 +132,8 @@
     - type: loadout # TheDen
       id: LoadoutPsionicMantisHeadHoodMantisDark
     - type: loadout # TheDen
+      id: LoadoutPsionicMantisHeadHoodMantisDarkFolded
+    - type: loadout # TheDen
       id: LoadoutPsionicMantisHeadMantisFezOrnate
 
 #- type: characterItemGroup
@@ -147,6 +149,8 @@
       id: LoadoutPsionicMantisNeckCloakMantisDark
     - type: loadout # TheDen
       id: LoadoutPsionicMantisNeckMantleMantisOrnate
+    - type: loadout # TheDen
+      id: LoadoutPsionicMantisNeckCloakMantisShroud
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisMask
@@ -223,6 +227,8 @@
       id: LoadoutPsionicMantisRangedShotgun
     - type: loadout
       id: LoadoutPsionicMantisMeleeGreatsword # Faust - Choosing the risk/reward sword prevents you from taking a gun, you have to commit
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeGreatswordHip # Faust (Hip Carry)
 
 - type: characterItemGroup
   id: LoadoutPsionicMantisMelee
@@ -238,3 +244,5 @@
       id: LoadoutPsionicMantisMeleeCane # Gnomon
     - type: loadout
       id: LoadoutPsionicMantisMeleeGreatsword # Faust
+    - type: loadout
+      id: LoadoutPsionicMantisMeleeGreatswordHip # Faust (Hip Carry)

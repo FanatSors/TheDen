@@ -40,6 +40,8 @@
 # SPDX-FileCopyrightText: 2025 skyr0cket01
 # SPDX-FileCopyrightText: 2025 sleepyyapril
 # SPDX-FileCopyrightText: 2026 Tomce795
+# SPDX-FileCopyrightText: 2026 entings
+# SPDX-FileCopyrightText: 2026 pocl v
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -79,6 +81,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     CowMoo:
       collection: CowMoos
     Gasp:
@@ -121,6 +125,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     CowMoo:
       collection: CowMoos
     Gasp:
@@ -145,6 +151,8 @@
       collection: MaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     # Floof
     Yip:
       collection: Yip
@@ -175,6 +183,8 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
       params:
         variation: 0.125
+    Chirp: # imp
+      collection: ReptilianChirp
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -197,6 +207,8 @@
       collection: FemaleCry
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     # Floof
     Yip:
       collection: Yip
@@ -227,6 +239,8 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg # TODO: find non-tail thump
       params:
         variation: 0.125
+    Chirp: # imp
+      collection: ReptilianChirp
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -273,6 +287,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -319,6 +335,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -354,6 +372,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -403,6 +423,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Hiss:
       collection: FelinidHisses
     Meow:
@@ -459,6 +481,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: VoxGasp #Imp
       params:
@@ -497,6 +521,8 @@
       collection: BikeHorn
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -537,14 +563,16 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
-    Hiss:
-      path: /Audio/Animals/snake_hiss.ogg #DeltaV
+    Hiss: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_hiss.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
+    Cough: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_cough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -553,20 +581,20 @@
       collection: MonkeyScreeches
     RobotBeep:
       collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
+    Yawn: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_yawn.ogg
     Snore:
       collection: Snores
     Honk:
       collection: BikeHorn
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
+    Sigh: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_sigh.ogg
+    Crying: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_cry.ogg
     Whistle:
       collection: Whistles
-    Gasp:
-      collection: MaleGasp
+    Gasp: #imp
+      path: /Audio/_Impstation/Voice/Arachnid/arachnid_gasp.ogg
     DefaultDeathgasp:
       collection: DeathGasp
 
@@ -606,6 +634,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: MaleGasp
     DefaultDeathgasp:
@@ -647,6 +677,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -657,8 +689,12 @@
   params:
     variation: 0.125
   sounds:
-    Buzz:
-      path: /Audio/Voice/Moth/moth_scream.ogg
+    InsectoidBuzz:
+      collection: InsectoidBuzz # DEN: insectoid buzz
+    InsectoidWingFlutter:
+      collection: InsectoidWingFlutter # DEN: insectoid wing flutter
+      params:
+        variation: 0.125
     Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
     Laugh:
@@ -669,10 +705,12 @@
       path: /Audio/Voice/Moth/moth_squeak.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
+    Cough: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -681,20 +719,20 @@
       collection: MonkeyScreeches
     RobotBeep:
       collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
+    Yawn: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothyawn.ogg
     Snore:
       collection: Snores
     Honk:
       collection: BikeHorn
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
+    Sigh: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothsigh.ogg
+    Crying: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcry.ogg
     Whistle:
       collection: Whistles
-    Gasp:
-      collection: MaleGasp
+    Gasp: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothgasp.ogg
     DefaultDeathgasp:
       collection: MaleDeathGasp
 
@@ -703,8 +741,12 @@
   params:
     variation: 0.125
   sounds:
-    Buzz:
-      path: /Audio/Voice/Moth/moth_scream.ogg
+    InsectoidBuzz:
+      collection: InsectoidBuzz # DEN: insectoid buzz
+    InsectoidWingFlutter:
+      collection: InsectoidWingFlutter # DEN: insectoid wing flutter
+      params:
+        variation: 0.125
     Scream:
       path: /Audio/Voice/Moth/moth_scream.ogg
     Laugh:
@@ -715,10 +757,12 @@
       path: /Audio/Voice/Moth/moth_squeak.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: FemaleSneezes
-    Cough:
-      collection: FemaleCoughs
+    Cough: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -727,20 +771,20 @@
       collection: MonkeyScreeches
     RobotBeep:
       collection: RobotBeeps
-    Yawn:
-      collection: FemaleYawn
+    Yawn: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothyawn.ogg
     Snore:
       collection: Snores
     Honk:
       collection: BikeHorn
-    Sigh:
-      collection: FemaleSigh
-    Crying:
-      collection: FemaleCry
+    Sigh: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothsigh.ogg
+    Crying: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcry.ogg
     Whistle:
       collection: Whistles
-    Gasp:
-      collection: FemaleGasp
+    Gasp: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothgasp.ogg
     DefaultDeathgasp:
       collection: FemaleDeathGasp
 
@@ -761,10 +805,12 @@
       path: /Audio/Voice/Moth/moth_squeak.ogg
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     Sneeze:
       collection: MaleSneezes
-    Cough:
-      collection: MaleCoughs
+    Cough: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcough.ogg
     CatMeow:
       collection: CatMeows
     CatHisses:
@@ -773,20 +819,20 @@
       collection: MonkeyScreeches
     RobotBeep:
       collection: RobotBeeps
-    Yawn:
-      collection: MaleYawn
+    Yawn: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothyawn.ogg
     Snore:
       collection: Snores
     Honk:
       collection: BikeHorn
-    Sigh:
-      collection: MaleSigh
-    Crying:
-      collection: MaleCry
+    Sigh: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothsigh.ogg
+    Crying: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothcry.ogg
     Whistle:
       collection: Whistles
-    Gasp:
-      collection: MaleGasp
+    Gasp: #imp
+      path: /Audio/_Impstation/Voice/Moth/mothgasp.ogg
     DefaultDeathgasp:
       collection: DeathGasp
 
@@ -981,6 +1027,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     CowMoo:
       collection: CowMoos
     Gasp:
@@ -1023,6 +1071,8 @@
       collection: Whistles
     Weh:
       collection: Weh
+    Hew:
+      collection: Hew
     CowMoo:
       collection: CowMoos
     Gasp:

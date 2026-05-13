@@ -10,8 +10,13 @@
 # SPDX-FileCopyrightText: 2025 portfiend
 # SPDX-FileCopyrightText: 2025 sheepie
 # SPDX-FileCopyrightText: 2025 sleepyyapril
+# SPDX-FileCopyrightText: 2026 Dirius
+# SPDX-FileCopyrightText: 2026 Dirius77
+# SPDX-FileCopyrightText: 2026 Fuvias
+# SPDX-FileCopyrightText: 2026 Jadrek
+# SPDX-FileCopyrightText: 2026 lunarcomets
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
+# SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 trait-name-Heavyweight = Heavyweight
 trait-description-Heavyweight =
@@ -69,8 +74,16 @@ trait-description-SharpTeeth =
     You were born with or have had your teeth modified to be sharper.
     These could come from gene modifications, a genetic legacy,
     or even custom made implants designed to turn teeth into tiny knives.
-    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species.
-    This has no effect on damage dealt with any form of armed melee.
+    Your unarmed melee attacks deal piercing instead of the standard damage type for your species.
+    Additionally, it increases your unarmed damage by 2 piercing at base. This does not confer any benefit to armed melee.
+
+trait-name-HardenedClaws = Hardened Claws
+trait-description-HardenedClaws =
+    Your fingertips have been replaced with sharp claws.
+    These could come from gene modifications, vatgrown implants,
+    or even hard plastic retractable claws incorpoated into a prosthetic limb.
+    Your unarmed melee attacks deal slash instead of the standard damage type for your species.
+    Additionally, it increases your unarmed damage by 2 slash at base. This does not confer any benefit to armed melee.
 
 trait-name-HandsFreePulling = Hands Free Pulling
 trait-description-HandsFreePulling =
@@ -130,3 +143,26 @@ trait-name-DispelVulnerability = Ethereal Presence
 trait-description-DispelVulnerability =
     Some aspect of your presence is intrinsically and perilously tied to the noosphere.
     You suffer [color=red]extreme heat damage[/color] from being the subject of a [color=purple]Dispel[/color] cast.
+
+trait-name-TenuousGrip = Tenuous Grip
+trait-description-TenuousGrip =
+    Due to the nature of your being, death has a further toll on you in relation to the strength of the noosphere.
+    You lose [color=red]all[/color] non-inherent psionic abilities upon death, and you are unable to be revived if the glimmer level is below a certain threshold.
+noospheric-vulnerability-unresurrectable = INTANGIBILITY DETECTED: Patient is susceptible to noospheric flux. Contact epistemics for
+    assistance in patient ressurection.
+noosphere-vulnerability-revive-attempt-failed = twitches and seizes up before falling limp once more.
+
+trait-name-NoosphericAlignedMood = Noospheric Aligned Mood
+trait-description-NoosphericAlignedMood =
+    You feel your connection to the noosphere as a part of your very being.
+    Low glimmer dampens your mood. High glimmer improves your mood.
+
+trait-name-NoosphericOpposedMood = Noospheric Opposed Mood
+trait-description-NoosphericOpposedMood =
+    Something about the connection to the noosphere grates on your psyche.
+    Low glimmer improves your mood. High glimmer dampens your mood.
+
+trait-name-MonochromaticVision = Monochromatic Vision
+trait-description-MonochromaticVision =
+    Either through unique anatomy or perhaps damage, you are no longer able to perceive color.
+    You will see the entire world in shades of gray.
